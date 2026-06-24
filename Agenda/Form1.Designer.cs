@@ -48,9 +48,10 @@
             label1.AutoSize = true;
             label1.Location = new Point(25, 9);
             label1.Name = "label1";
-            label1.Size = new Size(18, 15);
+            label1.Size = new Size(63, 15);
             label1.TabIndex = 0;
-            label1.Text = "ID";
+            label1.Text = "Id Contato";
+            label1.Click += label1_Click;
             // 
             // txtId
             // 
@@ -58,6 +59,7 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(207, 23);
             txtId.TabIndex = 1;
+            txtId.TextChanged += txtId_TextChanged;
             // 
             // txtNome
             // 
@@ -74,6 +76,7 @@
             label2.Size = new Size(40, 15);
             label2.TabIndex = 2;
             label2.Text = "Nome";
+            label2.Click += label2_Click;
             // 
             // txtTelefone
             // 
@@ -93,22 +96,27 @@
             // 
             // btInserir
             // 
+            btInserir.BackColor = SystemColors.MenuHighlight;
+            btInserir.BackgroundImageLayout = ImageLayout.None;
+            btInserir.Cursor = Cursors.Hand;
             btInserir.Location = new Point(26, 109);
             btInserir.Name = "btInserir";
             btInserir.Size = new Size(75, 23);
             btInserir.TabIndex = 6;
             btInserir.Text = "Inserir";
-            btInserir.UseVisualStyleBackColor = true;
+            btInserir.TextAlign = ContentAlignment.TopCenter;
+            btInserir.UseVisualStyleBackColor = false;
             btInserir.Click += btInserir_Click;
             // 
             // btAlterar
             // 
+            btAlterar.BackColor = SystemColors.MenuHighlight;
             btAlterar.Location = new Point(107, 109);
             btAlterar.Name = "btAlterar";
             btAlterar.Size = new Size(75, 23);
             btAlterar.TabIndex = 7;
             btAlterar.Text = "Alterar";
-            btAlterar.UseVisualStyleBackColor = true;
+            btAlterar.UseVisualStyleBackColor = false;
             btAlterar.Click += btAlterar_Click;
             // 
             // btLocalizar
@@ -133,11 +141,27 @@
             // 
             // dGDados
             // 
+            dGDados.AllowUserToAddRows = false;
+            dGDados.AllowUserToDeleteRows = false;
+            dGDados.AllowUserToResizeColumns = false;
+            dGDados.AllowUserToResizeRows = false;
+            dGDados.BackgroundColor = SystemColors.GradientActiveCaption;
+            dGDados.BorderStyle = BorderStyle.Fixed3D;
+            dGDados.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             dGDados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dGDados.ImeMode = ImeMode.On;
             dGDados.Location = new Point(28, 173);
+            dGDados.MultiSelect = false;
             dGDados.Name = "dGDados";
+            dGDados.ReadOnly = true;
+            dGDados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dGDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dGDados.Size = new Size(325, 150);
             dGDados.TabIndex = 10;
+            dGDados.TabStop = false;
+            dGDados.UseWaitCursor = true;
+            dGDados.CellClick += dGDados_CellClick;
+            dGDados.CellContentClick += dGDados_CellContentClick;
             // 
             // btNext
             // 
@@ -153,6 +177,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(btNext);
             Controls.Add(dGDados);
@@ -166,6 +191,7 @@
             Controls.Add(label2);
             Controls.Add(txtId);
             Controls.Add(label1);
+            ForeColor = SystemColors.ActiveCaptionText;
             Name = "Form1";
             Text = "Agenda";
             Load += Form1_Load;

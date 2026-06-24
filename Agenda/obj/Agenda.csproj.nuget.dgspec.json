@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\murilo\\source\\repos\\Agenda\\Agenda\\Agenda.csproj": {}
+    "C:\\Users\\rodrigo62289216\\source\\repos\\Digooow\\Agenda-Windows-Form\\Agenda\\Agenda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\murilo\\source\\repos\\Agenda\\Agenda\\Agenda.csproj": {
+    "C:\\Users\\rodrigo62289216\\source\\repos\\Digooow\\Agenda-Windows-Form\\Agenda\\Agenda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\murilo\\source\\repos\\Agenda\\Agenda\\Agenda.csproj",
+        "projectUniqueName": "C:\\Users\\rodrigo62289216\\source\\repos\\Digooow\\Agenda-Windows-Form\\Agenda\\Agenda.csproj",
         "projectName": "Agenda",
-        "projectPath": "C:\\Users\\murilo\\source\\repos\\Agenda\\Agenda\\Agenda.csproj",
-        "packagesPath": "C:\\Users\\murilo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\murilo\\source\\repos\\Agenda\\Agenda\\obj\\",
+        "projectPath": "C:\\Users\\rodrigo62289216\\source\\repos\\Digooow\\Agenda-Windows-Form\\Agenda\\Agenda.csproj",
+        "packagesPath": "C:\\Users\\rodrigo62289216\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rodrigo62289216\\source\\repos\\Digooow\\Agenda-Windows-Form\\Agenda\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\murilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rodrigo62289216\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

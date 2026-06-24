@@ -116,7 +116,41 @@ namespace Agenda
             Form2 form2 = new Form2();
             form2.Show();
             // form2.ShowDialog();
-            
+
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dGDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dGDados_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        {
+
+            dGDados.CurrentRow.Selected = true;
+
+            txtId.Text = dGDados.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString();
+
+            txtNome.Text = dGDados.Rows[e.RowIndex].Cells["Nome"].FormattedValue.ToString();
+
+            txtTelefone.Text = dGDados.Rows[e.RowIndex].Cells["Telefone"].FormattedValue.ToString();
+
         }
     }
 }
