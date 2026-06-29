@@ -17,10 +17,7 @@ namespace Agenda
             mtbTelefone.HidePromptOnLeave = true;
             mtbTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
 
-            mtbId.Enabled = false;
-            mtbId.BackColor = System.Drawing.Color.LightGray;
-            mtbId.Text = "Auto";
-
+            
             btLocalizar.Enabled = false;
             btAlterar.Enabled = false;
             btExcluir.Enabled = false;
@@ -114,7 +111,6 @@ namespace Agenda
                 ExibirDados();
 
                 idSelecionado = 0;
-                mtbId.Clear();
                 mtbNome.Clear();
                 mtbTelefone.Clear();
                 btAlterar.Enabled = false;
@@ -170,7 +166,6 @@ namespace Agenda
                 ExibirDados();
 
                 idSelecionado = 0;
-                mtbId.Clear();
                 mtbNome.Clear();
                 mtbTelefone.Clear();
                 btAlterar.Enabled = false;
@@ -197,7 +192,6 @@ namespace Agenda
                 if (!row.IsNewRow)
                 {
                     idSelecionado = Convert.ToInt32(row.Cells["Id"].Value);
-                    mtbId.Text = idSelecionado.ToString();
                     mtbNome.Text = row.Cells["Nome"].Value?.ToString() ?? "";
                     mtbTelefone.Text = row.Cells["Telefone"].Value?.ToString() ?? "";
 
@@ -208,13 +202,7 @@ namespace Agenda
             }
         }
 
-        private void mtbId_TextChanged(object sender, EventArgs e)
-        {
-            bool idValido = int.TryParse(mtbId.Text, out _) && !string.IsNullOrWhiteSpace(mtbId.Text);
-            btLocalizar.Enabled = idValido;
-            btAlterar.Enabled = idValido;
-            btExcluir.Enabled = idValido;
-        }
+
 
         private void mtbId_KeyDown(object sender, KeyEventArgs e)
         {

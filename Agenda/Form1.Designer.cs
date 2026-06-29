@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -39,7 +43,6 @@
             btNext = new Button();
             mtbTelefone = new MaskedTextBox();
             mtbNome = new MaskedTextBox();
-            mtbId = new MaskedTextBox();
             label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dGDados).BeginInit();
             SuspendLayout();
@@ -100,42 +103,68 @@
             // 
             // btLocalizar
             // 
+            btLocalizar.BackColor = SystemColors.MenuHighlight;
             btLocalizar.Location = new Point(188, 109);
             btLocalizar.Name = "btLocalizar";
             btLocalizar.Size = new Size(75, 23);
             btLocalizar.TabIndex = 8;
             btLocalizar.Text = "Localizar";
-            btLocalizar.UseVisualStyleBackColor = true;
+            btLocalizar.UseVisualStyleBackColor = false;
             btLocalizar.Click += btLocalizar_Click;
             // 
             // btExcluir
             // 
+            btExcluir.BackColor = SystemColors.Highlight;
             btExcluir.Location = new Point(269, 109);
             btExcluir.Name = "btExcluir";
             btExcluir.Size = new Size(75, 23);
             btExcluir.TabIndex = 9;
             btExcluir.Text = "Excluir";
-            btExcluir.UseVisualStyleBackColor = true;
+            btExcluir.UseVisualStyleBackColor = false;
             btExcluir.Click += btExcluir_Click;
             // 
             // dGDados
             // 
             dGDados.AllowUserToAddRows = false;
             dGDados.AllowUserToDeleteRows = false;
-            dGDados.AllowUserToResizeColumns = false;
-            dGDados.AllowUserToResizeRows = false;
+            dGDados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dGDados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dGDados.BackgroundColor = SystemColors.GradientActiveCaption;
-            dGDados.BorderStyle = BorderStyle.None;
+            dGDados.BorderStyle = BorderStyle.Fixed3D;
             dGDados.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
-            dGDados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dGDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dGDados.DefaultCellStyle = dataGridViewCellStyle2;
             dGDados.ImeMode = ImeMode.On;
             dGDados.Location = new Point(28, 173);
-            dGDados.MultiSelect = false;
+            dGDados.MinimumSize = new Size(397, 150);
             dGDados.Name = "dGDados";
             dGDados.ReadOnly = true;
-            dGDados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dGDados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = SystemColors.ActiveCaption;
+            dGDados.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dGDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dGDados.Size = new Size(325, 150);
+            dGDados.Size = new Size(397, 150);
             dGDados.TabIndex = 10;
             dGDados.TabStop = false;
             dGDados.CellClick += dGDados_SelectionChanged;
@@ -143,16 +172,18 @@
             // 
             // btNext
             // 
+            btNext.BackColor = SystemColors.Highlight;
             btNext.Location = new Point(350, 109);
             btNext.Name = "btNext";
             btNext.Size = new Size(75, 23);
             btNext.TabIndex = 11;
             btNext.Text = "Próxima";
-            btNext.UseVisualStyleBackColor = true;
+            btNext.UseVisualStyleBackColor = false;
             btNext.Click += btNext_Click;
             // 
             // mtbTelefone
             // 
+            mtbTelefone.BackColor = SystemColors.GradientActiveCaption;
             mtbTelefone.Location = new Point(94, 67);
             mtbTelefone.Name = "mtbTelefone";
             mtbTelefone.Size = new Size(207, 23);
@@ -161,24 +192,19 @@
             // 
             // mtbNome
             // 
+            mtbNome.BackColor = SystemColors.GradientActiveCaption;
             mtbNome.Location = new Point(94, 38);
             mtbNome.Name = "mtbNome";
             mtbNome.Size = new Size(207, 23);
             mtbNome.TabIndex = 13;
             // 
-            // mtbId
-            // 
-            mtbId.Location = new Point(94, 9);
-            mtbId.Name = "mtbId";
-            mtbId.Size = new Size(207, 23);
-            mtbId.TabIndex = 14;
-            mtbId.Visible = false;
-            // 
             // label4
             // 
             label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label4.BackColor = SystemColors.ButtonHighlight;
+            label4.BackColor = SystemColors.GradientActiveCaption;
+            label4.BorderStyle = BorderStyle.Fixed3D;
             label4.Location = new Point(94, 5);
+            label4.Margin = new Padding(3);
             label4.Name = "label4";
             label4.Size = new Size(207, 23);
             label4.TabIndex = 15;
@@ -192,7 +218,6 @@
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(label4);
-            Controls.Add(mtbId);
             Controls.Add(mtbNome);
             Controls.Add(mtbTelefone);
             Controls.Add(btNext);
@@ -226,7 +251,6 @@
         private Button btNext;
         private MaskedTextBox mtbTelefone;
         private MaskedTextBox mtbNome;
-        private MaskedTextBox mtbId;
         private Label label4;
     }
 }
