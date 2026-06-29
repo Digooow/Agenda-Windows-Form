@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            txtId = new TextBox();
-            txtNome = new TextBox();
             label2 = new Label();
-            txtTelefone = new TextBox();
             label3 = new Label();
             btInserir = new Button();
             btAlterar = new Button();
@@ -40,6 +37,10 @@
             btExcluir = new Button();
             dGDados = new DataGridView();
             btNext = new Button();
+            mtbTelefone = new MaskedTextBox();
+            mtbNome = new MaskedTextBox();
+            mtbId = new MaskedTextBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dGDados).BeginInit();
             SuspendLayout();
             // 
@@ -53,21 +54,6 @@
             label1.Text = "Id Contato";
             label1.Click += label1_Click;
             // 
-            // txtId
-            // 
-            txtId.Location = new Point(83, 9);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(207, 23);
-            txtId.TabIndex = 1;
-            txtId.TextChanged += txtId_TextChanged;
-            // 
-            // txtNome
-            // 
-            txtNome.Location = new Point(83, 38);
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(207, 23);
-            txtNome.TabIndex = 3;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -77,13 +63,6 @@
             label2.TabIndex = 2;
             label2.Text = "Nome";
             label2.Click += label2_Click;
-            // 
-            // txtTelefone
-            // 
-            txtTelefone.Location = new Point(83, 67);
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(207, 23);
-            txtTelefone.TabIndex = 5;
             // 
             // label3
             // 
@@ -146,7 +125,7 @@
             dGDados.AllowUserToResizeColumns = false;
             dGDados.AllowUserToResizeRows = false;
             dGDados.BackgroundColor = SystemColors.GradientActiveCaption;
-            dGDados.BorderStyle = BorderStyle.Fixed3D;
+            dGDados.BorderStyle = BorderStyle.None;
             dGDados.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             dGDados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dGDados.ImeMode = ImeMode.On;
@@ -159,8 +138,7 @@
             dGDados.Size = new Size(325, 150);
             dGDados.TabIndex = 10;
             dGDados.TabStop = false;
-            dGDados.UseWaitCursor = true;
-            dGDados.CellClick += dGDados_CellClick;
+            dGDados.CellClick += dGDados_SelectionChanged;
             dGDados.CellContentClick += dGDados_CellContentClick;
             // 
             // btNext
@@ -173,23 +151,58 @@
             btNext.UseVisualStyleBackColor = true;
             btNext.Click += btNext_Click;
             // 
+            // mtbTelefone
+            // 
+            mtbTelefone.Location = new Point(94, 67);
+            mtbTelefone.Name = "mtbTelefone";
+            mtbTelefone.Size = new Size(207, 23);
+            mtbTelefone.TabIndex = 12;
+            mtbTelefone.MaskInputRejected += maskedTextBox1_MaskInputRejected;
+            // 
+            // mtbNome
+            // 
+            mtbNome.Location = new Point(94, 38);
+            mtbNome.Name = "mtbNome";
+            mtbNome.Size = new Size(207, 23);
+            mtbNome.TabIndex = 13;
+            // 
+            // mtbId
+            // 
+            mtbId.Location = new Point(94, 9);
+            mtbId.Name = "mtbId";
+            mtbId.Size = new Size(207, 23);
+            mtbId.TabIndex = 14;
+            mtbId.Visible = false;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label4.BackColor = SystemColors.ButtonHighlight;
+            label4.Location = new Point(94, 5);
+            label4.Name = "label4";
+            label4.Size = new Size(207, 23);
+            label4.TabIndex = 15;
+            label4.Text = "Id gerado automaticamente.";
+            label4.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(mtbId);
+            Controls.Add(mtbNome);
+            Controls.Add(mtbTelefone);
             Controls.Add(btNext);
             Controls.Add(dGDados);
             Controls.Add(btExcluir);
             Controls.Add(btLocalizar);
             Controls.Add(btAlterar);
             Controls.Add(btInserir);
-            Controls.Add(txtTelefone);
             Controls.Add(label3);
-            Controls.Add(txtNome);
             Controls.Add(label2);
-            Controls.Add(txtId);
             Controls.Add(label1);
             ForeColor = SystemColors.ActiveCaptionText;
             Name = "Form1";
@@ -203,10 +216,7 @@
         #endregion
 
         private Label label1;
-        private TextBox txtId;
-        private TextBox txtNome;
         private Label label2;
-        private TextBox txtTelefone;
         private Label label3;
         private Button btInserir;
         private Button btAlterar;
@@ -214,5 +224,9 @@
         private Button btExcluir;
         private DataGridView dGDados;
         private Button btNext;
+        private MaskedTextBox mtbTelefone;
+        private MaskedTextBox mtbNome;
+        private MaskedTextBox mtbId;
+        private Label label4;
     }
 }

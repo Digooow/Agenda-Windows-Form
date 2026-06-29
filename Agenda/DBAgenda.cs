@@ -33,13 +33,15 @@ namespace Agenda
             }
         }
 
+
+
         public static void CriarTabela()
         {
             try
             {
                 using (var conn = DataBaseconnection())
                 {
-                    string sql = "CREATE TABLE IF NOT EXISTS Contatos (Id int, Nome Varchar(50), Telefone Varchar(50))";
+                    string sql = "CREATE TABLE IF NOT EXISTS Contatos (Id INTEGER PRIMARY KEY AUTOINCREMENT, Nome VARCHAR(50) NOT NULL, Telefone VARCHAR(50) NOT NULL)";
                     using (var cmd = new SQLiteCommand(sql, conn))
                     {
                         cmd.ExecuteNonQuery();
@@ -100,22 +102,25 @@ namespace Agenda
             }
         }
 
-        public static void InserirContato(Contato contato)
+        public static int InserirContato(Contato contato)
         {
             try
             {
                 using (var conn = DataBaseconnection())
                 {
-                    string sql = "INSERT INTO Contatos (Id, Nome, Telefone) VALUES (" + contato.Id + ", '" + contato.Nome + "', '" + contato.Telefone + "')";
+                    string sql = "INSERT INTO Contatos (Nome, Telefone) VALUES (@Nome, @Telefone); SELECT last_insert_rowid();";
                     using (var cmd = new SQLiteCommand(sql, conn))
                     {
-                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@Nome", contato.Nome);
+                        cmd.Parameters.AddWithValue("@Telefone", contato.Telefone);
+                        return Convert.ToInt32(cmd.ExecuteScalar());
                     }
                 }
             }
             catch (Exception error)
             {
                 Console.WriteLine("Erro inserir dado: " + error.Message);
+                return -1;
             }
         }
 
